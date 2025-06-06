@@ -28,7 +28,6 @@ void PMTree::buildTree(PMNode* parent, const std::vector<char>& elements) {
     for (char c : elements) {
         PMNode* child = new PMNode(c);
         parent->children.push_back(child);
-        
         std::vector<char> next_elements;
         for (char x : elements) {
             if (x != c) {
@@ -40,8 +39,7 @@ void PMTree::buildTree(PMNode* parent, const std::vector<char>& elements) {
         }
     }
 }
-
-void getAllPermsHelper(PMNode* node, 
+void getAllPermsHelper(PMNode* node,
                        std::vector<char>& current,
                        std::vector<std::vector<char>>& result) {
     current.push_back(node->value);
@@ -79,7 +77,7 @@ std::vector<char> getPerm1(PMTree& tree, int64_t num) {
     return all[num - 1];
 }
 
-std::vector<char> getPerm2Helper(PMNode* node, 
+std::vector<char> getPerm2Helper(PMNode* node,
                                  uint64_t num,
                                  const std::vector<uint64_t>& factorials) {
     int k = node->children.size();
