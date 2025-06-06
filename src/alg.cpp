@@ -62,9 +62,9 @@ std::vector<std::vector<char>> getAllPerms(PMTree& tree) {
     }
     return result;
 }
-std::vector<char> getPerm1(PMTree& tree, unsigned long long num) {
+std::vector<char> getPerm1(PMTree& tree, long num) {
     std::vector<std::vector<char>> all = getAllPerms(tree);
-    if (num < 1 || num > all.size()) {
+    if (num < 1 || num > static_cast<long>(all.size())) {
         return {};
     }
     return all[num - 1];
@@ -98,7 +98,7 @@ std::vector<char> getPerm2Helper(PMNode* node, unsigned long long num,const std:
     result.insert(result.end(), suffix.begin(), suffix.end());
     return result;
 }
-std::vector<char> getPerm2(PMTree& tree, unsigned long long num) {
+std::vector<char> getPerm2(PMTree& tree, long num) {
     int n = tree.size();
     if (n == 0) {
         if (num == 1) {
@@ -107,12 +107,13 @@ std::vector<char> getPerm2(PMTree& tree, unsigned long long num) {
             return {};
         }
     }
+
     std::vector<unsigned long long> factorials(n + 1);
     factorials[0] = 1;
     for (int i = 1; i <= n; ++i) {
         factorials[i] = factorials[i - 1] * i;
     }
-    if (num < 1 || num > factorials[n]) {
+    if (num < 1 || num > static_cast<long>(factorials[n])) {
         return {};
     }
     PMNode* root = tree.getRoot();
