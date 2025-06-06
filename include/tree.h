@@ -24,7 +24,7 @@ public:
     int size() const { return n; }
 };
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
-std::vector<char> getPerm1(PMTree& tree, int64_t num);
-std::vector<char> getPerm2(PMTree& tree, int64_t num); 
+std::vector<char> getPerm1(PMTree& tree, long num);
+std::vector<char> getPerm2(PMTree& tree, long num);
 
 #endif  // INCLUDE_TREE_H_
