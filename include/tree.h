@@ -11,21 +11,19 @@ struct PMNode {
     PMNode(char v) : value(v) {}
     ~PMNode();
 };
-
 class PMTree {
-private:
+ private:
     PMNode* root;
     int n;
 
     void buildTree(PMNode* parent, const std::vector<char>& elements);
 
-public:
+ public:
     PMTree(const std::vector<char>& in);
     ~PMTree();
     PMNode* getRoot() const { return root; }
     int size() const { return n; }
 };
-
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
 std::vector<char> getPerm1(PMTree& tree, unsigned long long num);
 std::vector<char> getPerm2(PMTree& tree, unsigned long long num);
