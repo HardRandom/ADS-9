@@ -3,9 +3,9 @@
 #include  <fstream>
 #include  <locale>
 #include  <cstdlib>
-#include  "tree.h"
 #include <algorithm>
 #include <vector>
+#include  "tree.h"
 
 PMNode::~PMNode() {
     for (PMNode* child : children) {
