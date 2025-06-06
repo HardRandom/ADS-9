@@ -13,18 +13,18 @@ struct PMNode {
     ~PMNode();
 };
 class PMTree {
- private:
+ private:  // Fixed indentation
     PMNode* root;
     int n;
     void buildTree(PMNode* parent, const std::vector<char>& elements);
- public:
+ public:  // Fixed indentation
     explicit PMTree(const std::vector<char>& in);
     ~PMTree();
     PMNode* getRoot() const { return root; }
     int size() const { return n; }
 };
 std::vector<std::vector<char>> getAllPerms(PMTree& tree);
-std::vector<char> getPerm1(PMTree& tree, int num);
-std::vector<char> getPerm2(PMTree& tree, int num);
+std::vector<char> getPerm1(PMTree& tree, int64_t num);
+std::vector<char> getPerm2(PMTree& tree, int64_t num);
 
 #endif  // INCLUDE_TREE_H_
