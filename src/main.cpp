@@ -1,20 +1,18 @@
 // Copyright 2022 NNTU-CS
 #include "tree.h"
-#include "alg.h"
-#include <iostream>
-#include <vector>
 #include <chrono>
-#include <random>
 #include <cstdint>
-
+#include <iostream>
+#include <random>
+#include <vector>
 int main() {
-    std::vector<char> input = {'1','2','3','4','5','6'};
+    std::vector<char> input = {'1', '2', '3', '4', '5', '6'};
     PMTree tree(input);
     auto start = std::chrono::high_resolution_clock::now();
     auto perms = getAllPerms(tree);
     auto end = std::chrono::high_resolution_clock::now();
     std::cout << "getAllPerms time: "
-              << std::chrono::duration<double, std::milli>(end - start).count() 
+              << std::chrono::duration<double, std::milli>(end - start).count()
               << " ms\n";
     std::random_device rd;
     std::mt19937 gen(rd());
