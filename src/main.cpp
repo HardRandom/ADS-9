@@ -1,10 +1,10 @@
 // Copyright 2022 NNTU-CS
-#include "tree.h"
 #include <chrono>
 #include <cstdint>
 #include <iostream>
 #include <random>
 #include <vector>
+#include "tree.h"
 int main() {
     std::vector<char> input = {'1', '2', '3', '4', '5', '6'};
     PMTree tree(input);
